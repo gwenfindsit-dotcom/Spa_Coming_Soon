@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon — Something Amazing is Being Built</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f3ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        },
+                        darkBg: '#0b0f19',
+                        darkCard: '#131b2e',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-card {
+            background: rgba(19, 27, 46, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-glow {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(100px);
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        .dark .gradient-glow {
+            opacity: 0.25;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-darkBg text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between font-sans transition-colors duration-300 relative overflow-x-hidden selection:bg-brand-500 selection:text-white">
+
+    <!-- Ambient Background Glows -->
+    <div class="gradient-glow w-96 h-96 bg-brand-500 top-[-50px] left-[-100px]"></div>
+    <div class="gradient-glow w-96 h-96 bg-purple-500 bottom-[-50px] right-[-100px]"></div>
+
+    <header class="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-10">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-brand-500/25">
+                <i class="fa-solid fa-code text-lg"></i>
+            </div>
+            <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-slate-900 to-brand-600 dark:from-white dark:to-brand-400 bg-clip-text text-transparent">
+                Project<span class="text-brand-600 dark:text-brand-400">X</span>
+            </span>
+        </div>
+
+        <button id="themeToggle" class="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors shadow-sm" aria-label="Toggle theme">
+            <i class="fa-solid fa-sun text-lg hidden dark:block text-amber-400"></i>
+            <i class="fa-solid fa-moon text-lg block dark:hidden text-slate-700"></i>
+        </button>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 py-12 flex-1 flex flex-col items-center justify-center text-center relative z-10">
+        
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-50 dark:bg-brand-900/40 border border-brand-200 dark:border-brand-700/50 text-brand-700 dark:text-brand-300 text-xs font-bold tracking-wide uppercase mb-8 shadow-sm">
+            <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-ping"></span>
+            <span><i class="fa-solid fa-compass-drafting mr-1"></i> Under Active Development</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+            Coming Soon!
+        </h1>
+        <p class="mt-4 text-2xl sm:text-3xl font-bold bg-gradient-to-r from-brand-600 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+            Website is in Development.
+        </p>
+
+        <!-- Subtitle Value Proposition -->
+        <p class="mt-6 text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+            We are crafting a next-generation platform designed to streamline your workflows with speed, modern simplicity, and smart automation. Stay tuned for launch!
+        </p>
+
+        <div class="mt-12 w-full max-w-xl">
+            <div class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Estimated Launch Countdown</div>
+            <div class="grid grid-cols-4 gap-3 sm:gap-4">
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center shadow-sm">
+                    <span id="days" class="font-mono text-2xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400">00</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Days</span>
+                </div>
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center shadow-sm">
+                    <span id="hours" class="font-mono text-2xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400">00</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Hours</span>
+                </div>
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center shadow-sm">
+                    <span id="minutes" class="font-mono text-2xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400">00</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Minutes</span>
+                </div>
+                <div class="glass-card p-3 sm:p-4 rounded-2xl flex flex-col items-center shadow-sm">
+                    <span id="seconds" class="font-mono text-2xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400">00</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Seconds</span>
+                </div>
+            </div>
+            
+            <!-- Overall Progress Bar -->
+            <div class="mt-6 w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-brand-500 to-purple-500 h-full w-[78%] rounded-full transition-all duration-1000"></div>
+            </div>
+            <div class="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 font-semibold mt-1.5 px-1">
+                <span>Phase 3: Final Testing</span>
+                <span>78% Completed</span>
+            </div>
+        </div>
+
+        <div class="mt-12 w-full max-w-lg">
+            <form id="waitlistForm" class="flex flex-col sm:flex-row gap-3">
+                <div class="relative flex-1">
+                    <input 
+                        type="email" 
+                        id="emailInput" 
+                        required 
+                        placeholder="Enter your work email..." 
+                        class="w-full px-5 py-3.5 rounded-xl bg-white dark:bg-darkCard border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all shadow-sm"
+                    >
+                    <span id="emailError" class="hidden absolute -bottom-5 left-1 text-[11px] text-red-500 font-bold">Please enter a valid email.</span>
+                </div>
+                <button 
+                    type="submit" 
+                    class="px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg shadow-brand-500/25 transition-all hover:scale-[1.02] active:scale-[0.98] text-sm flex items-center justify-center gap-2"
+                >
+                    <span>Notify Me</span>
+                    <i class="fa-solid fa-bell text-xs"></i>
+                </button>
+            </form>
+
+            <!-- Success Confirmation Box -->
+            <div id="waitlistSuccess" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-sm font-semibold flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                <span>You're on the priority list! We'll notify you as soon as we launch.</span>
+            </div>
+        </div>
+
+        <div class="mt-20 w-full text-left">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 text-center mb-8">What to Expect</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl glass-card hover:border-brand-500/40 transition-all duration-300 shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-base">Ultra Fast</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">Built on modern serverless architecture for sub-millisecond response times.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl glass-card hover:border-brand-500/40 transition-all duration-300 shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-base">Smart Automation</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">AI-driven helpers that streamline complex manual workflows with ease.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl glass-card hover:border-brand-500/40 transition-all duration-300 shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-base">Secure & Reliable</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 leading-relaxed">End-to-end encryption with 99.9% guaranteed uptime SLA.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="w-full max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 gap-4 relative z-10">
+        <div>
+            &copy; 2026 ProjectX. All rights reserved.
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a href="mailto:hello@example.com" class="hover:text-brand-600 transition-colors">Contact Support</a>
+            <span>&bull;</span>
+            <div class="flex items-center gap-3">
+                <a href="#" class="hover:text-brand-600 transition-colors" aria-label="Twitter"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                <a href="#" class="hover:text-brand-600 transition-colors" aria-label="GitHub"><i class="fa-brands fa-github text-sm"></i></a>
+                <a href="#" class="hover:text-brand-600 transition-colors" aria-label="Discord"><i class="fa-brands fa-discord text-sm"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Theme Switcher Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // 2. Countdown Timer Logic (Target: 30 days from now)
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 30);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) return;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3. Email Waitlist Form Handling with LocalStorage
+        const waitlistForm = document.getElementById('waitlistForm');
+        const emailInput = document.getElementById('emailInput');
+        const emailError = document.getElementById('emailError');
+        const waitlistSuccess = document.getElementById('waitlistSuccess');
+
+        if (localStorage.getItem('projectx_subscribed_email')) {
+            waitlistForm.classList.add('hidden');
+            waitlistSuccess.classList.remove('hidden');
+        }
+
+        waitlistForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-red-500');
+                return;
+            }
+
+            emailError.classList.add('hidden');
+            emailInput.classList.remove('border-red-500');
+
+            localStorage.setItem('projectx_subscribed_email', email);
+            waitlistForm.classList.add('hidden');
+            waitlistSuccess.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
